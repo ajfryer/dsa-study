@@ -14,10 +14,10 @@ const findAllMazePaths = (maze, x = 0, y = 0) => {
   maze[x][y] = '*'; // mark x,y as 'not open' because its been visited
 
   const nextMoves = [
-    [x - 1, y, 'up'],
-    [x, y + 1, 'right'],
-    [x + 1, y, 'down'],
-    [x, y - 1, 'left'],
+    [x - 1, y, 'U'],
+    [x, y + 1, 'R'],
+    [x + 1, y, 'D'],
+    [x, y - 1, 'L'],
   ];
 
   nextMoves.forEach((nextMove) => {
