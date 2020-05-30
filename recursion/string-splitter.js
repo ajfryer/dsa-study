@@ -1,10 +1,10 @@
 const stringSplitter = (string, del) => {
-  const indexOfDel = string.indexOf(del);
-
-  if (indexOfDel === -1) return string;
-
-  return [string.slice(0, indexOfDel)].concat(
-    stringSplitter(string.slice(indexOfDel + 1), del)
+  const delIdx = string.indexOf(del);
+  // base case
+  if (delIdx === -1) return string;
+  // recursive case
+  return [string.slice(0, delIdx)].concat(
+    stringSplitter(string.slice(delIdx + del.length), del)
   );
 };
 
