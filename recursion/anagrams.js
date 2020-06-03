@@ -15,4 +15,21 @@ const anagrams = (word) => {
   return results;
 };
 
-console.log(anagrams(process.argv[2]));
+console.log(anagrams(process.argv[2]).length);
+
+/*
+4 (3) (2) (1)
+
+5!
+
+5*4*3*2*1
+
+
+7*6*5*4*3*2*1
+
+8*7
+
+n*n
+
+
+*/

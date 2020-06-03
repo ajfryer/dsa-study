@@ -38,7 +38,7 @@ const moveDisk2 = (disk = 2, source = [2, 1, 0], dest = [], spare = []) => {
   //printTower('0', [source, dest, spare]);
 
   if (disk === 0) {
-    //printTower([source, dest, spare]);
+    printTower([source, dest, spare]);
     dest.push(source.pop());
     printTower(disk, [source, dest, spare]);
   } else {
@@ -46,11 +46,11 @@ const moveDisk2 = (disk = 2, source = [2, 1, 0], dest = [], spare = []) => {
     //printTower('2', [source, dest, spare]);
     //printTower('2.5', [source, dest, spare]);
     dest.push(source.pop());
-    printTower(disk, [source, dest, spare]);
+    //printTower(disk, [source, dest, spare]);
     moveDisk2(disk - 1, spare, dest, source);
-    //printTower('4', [source, dest, spare]);
+    printTower('4', [source, dest, spare]);
   }
-  //printTower('5', [source, dest, spare]);
+  printTower('5', [source, dest, spare]);
   //return [source, dest, spare];
 };
 

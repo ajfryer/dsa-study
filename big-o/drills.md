@@ -180,7 +180,7 @@ Time complexity: O(2^n)
 3. reverse string: O(n) - runs for as long as length of string
 4. nth triangular number: O(n) - runs until the num hits 0
 5. string splitter: O(n) - runs for as many times there are delimeters
-6. fibonacci: O(2^n) - each time the function calls, it calls two of itself, which calls two
+6. fibonacci: O(n) - each time the function calls, it calls two of itself, which calls two
 7. factorial: O(n) - runs until the number runs out
 8. find any way out of maze:
 9. find all ways out of maze:

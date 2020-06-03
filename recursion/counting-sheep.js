@@ -1,6 +1,7 @@
 const countingSheep = (numSheep) => {
   // base case
   if (numSheep === 0) console.log('All sheep jumped over the fence');
+  // recursive
   else {
     console.log(`${numSheep}: Another sheep jumps over the fence`);
     countingSheep(numSheep - 1);

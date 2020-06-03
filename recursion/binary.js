@@ -7,4 +7,9 @@ const toBinary = (num) => {
   return toBinary(Math.floor(num / 2)) + binary;
 };
 
-console.log(toBinary(process.argv[2]), convertToBinary(process.argv[2]));
+console.log(toBinary(process.argv[2]));
+
+/*
+
+O(logn)
+*/

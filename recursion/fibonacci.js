@@ -18,6 +18,6 @@ console.log(fibonacciSequence(Number(process.argv[2])));
 
 /*
 
-
+O(n)
 
 */
