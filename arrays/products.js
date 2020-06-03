@@ -2,7 +2,6 @@ const products = (arr) => {
   const product = arr.reduce((prev, curr) => {
     return prev * curr;
   }, 1);
-  console.log(product);
   return arr.map((a) => product / a);
 };
 
