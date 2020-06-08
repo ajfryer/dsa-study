@@ -155,4 +155,6 @@ const main = () => {
   ophidianBank(10);
 };
 
-main();
+module.exports = DLLQueue;
+
+//main();

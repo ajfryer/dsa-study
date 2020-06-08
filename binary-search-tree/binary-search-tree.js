@@ -1,3 +1,5 @@
+const Queue = require('../stack-and-queue/dll-queue.js');
+
 class BinarySearchTree {
   constructor(key = null, value = null, parent = null) {
     this.key = key;
@@ -37,6 +39,32 @@ class BinarySearchTree {
     else if (key > this.key && this.right) return this.right.find(key);
     // else, key is not found in tree
     else throw new Error('Key Not Found');
+  }
+
+  dfs(values = []) {
+    if (this.left) values = this.left.dfs(values);
+    values.push(this.value);
+
+    if (this.right) values = this.right.dfs(values);
+    return values;
+  }
+
+  bfs(tree, values = []) {
+    const queue = new Queue();
+    const node = tree;
+
+    queue.enqueue(node);
+    console.log(queue.length);
+    while (queue.head) {
+      const node = queue.dequeue();
+      console.log(node); //remove from the queue
+      values.push(node.value); // add that value from the queue to an array
+
+      if (node.left) queue.enqueue(node.left); //add left child to the queue
+
+      if (node.right) queue.enqueue(node.right); // add right child to the queue
+    }
+    return values;
   }
 
   remove(key) {
@@ -89,6 +117,39 @@ class BinarySearchTree {
     if (!this.left) return this;
 
     return this.left._findMin();
+  }
+
+  preOrder(values = []) {
+    values.push(this.key);
+    if (this.left) {
+      this.left.preOrder(values);
+    }
+    if (this.right) {
+      this.right.preOrder(values);
+    }
+    return values;
+  }
+
+  inOrder(values = []) {
+    if (this.left) {
+      this.left.inOrder(values);
+    }
+    values.push(this.key);
+    if (this.right) {
+      this.right.inOrder(values);
+    }
+    return values;
+  }
+
+  postOrder(values = []) {
+    if (this.left) {
+      this.left.postOrder(values);
+    }
+    if (this.right) {
+      this.right.postOrder(values);
+    }
+    values.push(this.key);
+    return values;
   }
 }
 
